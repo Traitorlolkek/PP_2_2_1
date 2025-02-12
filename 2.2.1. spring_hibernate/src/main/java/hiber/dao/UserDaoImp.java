@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.EntityNotFoundException;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
@@ -36,9 +37,9 @@ public class UserDaoImp implements UserDao {
               .getResultList();
 
       if (!users.isEmpty()) {
-         return users.get(0);  // Возвращаем первого найденного пользователя
+         return users.get(0);
       }
-      return null;
+      throw new EntityNotFoundException("Пользователь с автомобилем " + model + " и серией " + series + " не найден.");
    }
 
 }

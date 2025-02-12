@@ -32,8 +32,9 @@ public class MainApp {
          System.out.println();
       }
 
-      User user1 = userService.getUserByCar("Ford", 1);
-      System.out.println(user1.toString());
+      User user1 = userService.getUserByCar("Ford", 2);
+
+      System.out.println("Программа выполняется дальше");
 
       context.close();
    }
