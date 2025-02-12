@@ -31,10 +31,10 @@ public class MainApp {
          System.out.println("Car = "+ user.getUserCar());
          System.out.println();
       }
-
-      User user1 = userService.getUserByCar("Ford", 2);
-
-      System.out.println("Программа выполняется дальше");
+      // здесь все ок , т.к. данный пользователь есть в БД
+      System.out.println(userService.getUserByCar("Ford", 1));
+      // при вызове метода с несуществующим юзером программа крашится.
+      System.out.println(userService.getUserByCar("Ford", 2));
 
       context.close();
    }

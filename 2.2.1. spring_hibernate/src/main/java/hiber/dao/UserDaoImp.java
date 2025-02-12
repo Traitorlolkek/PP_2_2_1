@@ -38,8 +38,7 @@ public class UserDaoImp implements UserDao {
 
       if (!users.isEmpty()) {
          return users.get(0);
-      }
-      throw new EntityNotFoundException("Пользователь с автомобилем " + model + " и серией " + series + " не найден.");
+      } else throw new EntityNotFoundException("Пользователь с автомобилем " + model + " и серией " + series + " не найден.");
    }
 
 }
